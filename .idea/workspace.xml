@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2cacf601-c623-4946-8e0f-eeac9152617a" name="Default Changelist" comment="" />
+    <list default="true" id="2cacf601-c623-4946-8e0f-eeac9152617a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/WilliamHill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/WilliamHill.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/WilliamHill.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="50" column="350" selection-start-line="50" selection-start-column="350" selection-end-line="50" selection-end-column="350" />
+            <state relative-caret-position="256">
+              <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,6 +36,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -46,6 +53,7 @@
     <option name="width" value="1750" />
     <option name="height" value="980" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -82,7 +90,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554589832606" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554594593255" />
     <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/plugins/testng/lib/testng.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -137,34 +145,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WilliamHill - 2019.04.06 at 17h 41m 23s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 25m 28s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 17h 43m 22s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 26m 52s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 17h 44m 42s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 30m 33s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 17h 49m 04s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 31m 53s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 17h 50m 04s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 33m 55s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 17h 51m 29s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 35m 19s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 17h 53m 48s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 36m 46s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 17h 55m 26s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 39m 36s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 22h 46m 02s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 44m 18s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WilliamHill - 2019.04.06 at 22h 47m 12s.xml">
+    <history-entry file="WilliamHill - 2019.04.07 at 00h 45m 39s.xml">
       <configuration name="WilliamHill" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -180,7 +188,7 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22483222" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -203,8 +211,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/tests/WilliamHill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="50" column="350" selection-start-line="50" selection-start-column="350" selection-end-line="50" selection-end-column="350" />
+        <state relative-caret-position="256">
+          <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
