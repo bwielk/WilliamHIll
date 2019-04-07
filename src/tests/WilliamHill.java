@@ -11,11 +11,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.Given;
+import pageModels.GameIntroPage;
+import pageModels.VegasHomePage;
+import pageModels.VegasResultsPage;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -23,6 +24,9 @@ public class WilliamHill {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private VegasHomePage vegasHomePage;
+    private VegasResultsPage vegasResultsPage;
+    private GameIntroPage gameIntroPage;
 
     @BeforeMethod
     public void setUp() {
@@ -33,24 +37,23 @@ public class WilliamHill {
         driver.manage().deleteAllCookies();
         driver.get("https://vegas.williamhill.com/");
         wait = new WebDriverWait(driver, 20);
+        vegasHomePage = new VegasHomePage();
+        vegasResultsPage = new VegasResultsPage();
+        gameIntroPage = new GameIntroPage();
     }
 
     @Given("^user has navigated to William Hill Vegas$")
     public void navigateToPage() throws InterruptedException {
         Thread.sleep(5000);
-        Assert.assertEquals(driver.getTitle(), "Play Vegas Games online today | William Hill");
+        Assert.assertEquals(driver.getTitle(), vegasHomePage.getPageTitle());
     }
 
     @When("^searching for ([^\\\"]*)$")
     public void searchForGame(String gameName) throws InterruptedException {
-        WebElement magnifierButton = driver.findElement(By.className("btn-search-magnifier"));
-        magnifierButton.click();
-        String cssSelectorSearchInputField = "#root > div > div.sc-hMqMXs.koXVHj > div > input";
-        WebElement gameSearchInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(cssSelectorSearchInputField)));
-        gameSearchInput.sendKeys(gameName);
-        String mayfairRouletteXPATH = "//img[@alt='Mayfair Roulette']";
+        vegasHomePage.conductGameSearch(wait, gameName);
         Thread.sleep(3000);
-        WebElement mayfairRouletteWidget = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(mayfairRouletteXPATH)));
+
+
         Assert.assertNotNull(mayfairRouletteWidget);
     }
 
