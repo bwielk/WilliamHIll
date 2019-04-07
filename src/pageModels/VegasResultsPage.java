@@ -26,7 +26,7 @@ public class VegasResultsPage {
         if (getResultsSections(wait).isEmpty()) {
             throw new NoSuchElementException("Results sections are not displayed");
         } else {
-            return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpathOfGameWidget)));
+            return Common.findWebElement(wait, By.xpath(xpathOfGameWidget));
         }
     }
 

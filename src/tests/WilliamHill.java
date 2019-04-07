@@ -2,13 +2,9 @@ package tests;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,8 +12,7 @@ import cucumber.api.java.en.Given;
 import pageModels.GameIntroPage;
 import pageModels.VegasHomePage;
 import pageModels.VegasResultsPage;
-
-import java.util.NoSuchElementException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class WilliamHill {
@@ -52,37 +47,25 @@ public class WilliamHill {
     public void searchForGame(String gameName) throws InterruptedException {
         vegasHomePage.conductGameSearch(wait, gameName);
         Thread.sleep(3000);
-
-
-        Assert.assertNotNull(mayfairRouletteWidget);
+        List<WebElement> results = vegasResultsPage.getResultsSections(wait);
+        WebElement desiredGameWidget = vegasResultsPage.extractASpecificGameWidget(wait, gameName);
+        Assert.assertNotNull(desiredGameWidget);
+        Assert.assertTrue(results.size() > 0);
     }
 
-    @Then("details of ([^\\\"]*) are shown after clicking the widget")
+    @Then("details of ([^\\\"]*) are shown after hovering on the widget")
     public void displayGameDetails(String gameName) throws InterruptedException {
-        Actions actions = new Actions(driver);
-        Action moveOverTheTile = actions.moveToElement(mayfairRouletteWidget).build();
-        moveOverTheTile.perform();
-        WebElement moreButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("tile-menu__button--more")));
-        moreButton.click();
-        Thread.sleep(3000);
-        String gameHeaderCssSelector = "#root > div > div.page.categories-list-page--home.categories-list-page.categories-list-page--desktop.page--desktop > " +
-                "div.categories-list-page__content.page__content > div.tile-details > div > div.tile-details__left-content > h2";
-        WebElement gameHeader = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(gameHeaderCssSelector)));
+        WebElement gameNameWidget = vegasResultsPage.extractASpecificGameWidget(wait, gameName);
+        vegasResultsPage.hoverOverAGameWidget(driver, gameNameWidget);
+        vegasResultsPage.showMoreDetailsOnAGame(wait);
+        WebElement details = gameIntroPage.getDetailsTile(wait);
+        WebElement gameHeader = gameIntroPage.getGameTitleHeader(wait);
+        Assert.assertNotNull(details);
         Assert.assertEquals(gameHeader.getText(), gameName);
+    }
 
+    @When("Play Now button is clicked")
+    public void playNowIsClicked(){
 
-        String playButtonSelector = "#root > div > div.page.search.search--tablet.page--tablet > section > div.tile-details " +
-                "> div > div.tile-details__left-content > div.tile-details__buttons > button.sc-EHOje.hGojEe";
-        try {
-            WebElement cookies = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("cookie-disclaimer__button")));
-            cookies.click();
-            Thread.sleep(2000);
-        } catch (NoSuchElementException e) {
-            System.out.println("Cookie disclaimer hasn't showed up");
-        }
-        WebElement playButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[contains(text(), 'Play Now')]")));
-        playButton.click();
-        WebElement login = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("login-component__wrapper")));
-        Assert.assertNotNull(login);
     }
 }

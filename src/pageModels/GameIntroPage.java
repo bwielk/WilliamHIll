@@ -7,12 +7,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GameIntroPage {
 
+    private By detailsTile = By.className("tile-details__content");
     private By gameHeader = By.cssSelector("#root > div > div.page.categories-list-page--home.categories-list-" +
                                             "page.categories-list-page--desktop.page--desktop > \" +\n" +
                                             "\"div.categories-list-page__content.page__content > div.tile-details > " +
                                             "div > div.tile-details__left-content > h2");
     private By playButton = By.xpath("//*[contains(text(), 'Play Now')]");
     private By loginPanel  = By.className("login-component__wrapper");
+
+    public WebElement getDetailsTile(WebDriverWait wait){
+        return Common.findWebElement(wait, this.detailsTile);
+    }
 
     public WebElement getGameTitleHeader(WebDriverWait wait){
         return Common.findWebElement(wait, this.gameHeader);
